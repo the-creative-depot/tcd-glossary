@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TCD Glossary
  * Description: A-Z glossary with Elementor widget, taxonomy filtering, and auto-updates from GitHub.
- * Version:     2.0.3
+ * Version:     2.0.4
  * Author:      TCD
  * License:     GPL-2.0-or-later
  * Text Domain: tcd-glossary
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TCD_GLOSSARY_VERSION', '2.0.3' );
+define( 'TCD_GLOSSARY_VERSION', '2.0.4' );
 define( 'TCD_GLOSSARY_URL', plugin_dir_url( __FILE__ ) );
 define( 'TCD_GLOSSARY_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TCD_GLOSSARY_GITHUB_REPO', 'the-creative-depot/tcd-glossary' );

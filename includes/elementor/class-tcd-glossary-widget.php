@@ -238,16 +238,13 @@ class TCD_Glossary_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control( 'nav_sticky_offset', array(
 			'label'      => __( 'Sticky Offset', 'tcd-glossary' ),
 			'type'       => \Elementor\Controls_Manager::SLIDER,
-			'size_units' => array( 'px', 'em', 'rem' ),
+			'size_units' => array( 'px' ),
 			'range'      => array(
 				'px' => array(
-					'min' => 0,
-					'max' => 200,
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 1,
 				),
-			),
-			'default'    => array(
-				'size' => 0,
-				'unit' => 'px',
 			),
 			'selectors'  => array(
 				'{{WRAPPER}} .tcd-glossary__nav' => 'top: {{SIZE}}{{UNIT}};',
