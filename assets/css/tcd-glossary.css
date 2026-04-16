@@ -1,0 +1,207 @@
+/* TCD Glossary
+ * Palette: dark #0A0A0A, orange #E8471A, teal #2A7C8C,
+ * light bg #F5F5F5, body #1A1A1A, border #DFDFDF
+ */
+
+.tcd-glossary {
+	--tcd-dark: #0A0A0A;
+	--tcd-orange: #E8471A;
+	--tcd-teal: #2A7C8C;
+	--tcd-light: #F5F5F5;
+	--tcd-body: #1A1A1A;
+	--tcd-border: #DFDFDF;
+
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 2rem 1.25rem 4rem;
+	color: var(--tcd-body);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	line-height: 1.6;
+}
+
+/* Alphabet nav */
+.tcd-glossary__nav {
+	background: #fff;
+	border: 1px solid var(--tcd-border);
+	border-radius: 8px;
+	padding: 0.75rem 1rem;
+	margin-bottom: 2.5rem;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.tcd-glossary__nav-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.25rem;
+}
+
+.tcd-glossary__nav-item {
+	margin: 0;
+	flex: 1 0 auto;
+	text-align: center;
+}
+
+.tcd-glossary__nav-link {
+	display: inline-block;
+	min-width: 1.75rem;
+	padding: 0.35rem 0.5rem;
+	font-weight: 600;
+	font-size: 0.95rem;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tcd-glossary__nav-link.is-active {
+	color: var(--tcd-dark);
+}
+
+.tcd-glossary__nav-link.is-active:hover,
+.tcd-glossary__nav-link.is-active:focus {
+	background: var(--tcd-orange);
+	color: #fff;
+	outline: none;
+}
+
+.tcd-glossary__nav-link.is-disabled {
+	color: #BFBFBF;
+	cursor: default;
+}
+
+/* Sections */
+.tcd-glossary__sections {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.tcd-glossary__section {
+	scroll-margin-top: 6rem;
+}
+
+.tcd-glossary__letter {
+	font-size: 2.25rem;
+	font-weight: 700;
+	color: var(--tcd-orange);
+	margin: 0 0 1.25rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--tcd-border);
+	letter-spacing: 0.02em;
+}
+
+/* Terms */
+.tcd-glossary__terms {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.tcd-glossary__term {
+	padding: 0;
+}
+
+.tcd-glossary__term-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--tcd-dark);
+}
+
+.tcd-glossary__term-definition {
+	margin: 0;
+	font-size: 1rem;
+	color: var(--tcd-body);
+}
+
+.tcd-glossary__term-definition p:first-child { margin-top: 0; }
+.tcd-glossary__term-definition p:last-child  { margin-bottom: 0; }
+
+.tcd-glossary__empty {
+	background: var(--tcd-light);
+	border: 1px solid var(--tcd-border);
+	border-radius: 6px;
+	padding: 1.25rem;
+	text-align: center;
+	color: var(--tcd-body);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+	.tcd-glossary { padding: 1.5rem 1rem 3rem; }
+	.tcd-glossary__nav { padding: 0.5rem; }
+	.tcd-glossary__nav-link {
+		min-width: 1.5rem;
+		padding: 0.3rem 0.35rem;
+		font-size: 0.85rem;
+	}
+	.tcd-glossary__letter { font-size: 1.75rem; }
+	.tcd-glossary__sections { gap: 2.25rem; }
+	.tcd-glossary__terms { gap: 1.5rem; }
+}
+
+/* Taxonomy filter */
+.tcd-glossary__filter {
+	margin-bottom: 1.25rem;
+}
+
+.tcd-glossary__filter-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tcd-glossary__filter-item {
+	margin: 0;
+}
+
+.tcd-glossary__filter-pill {
+	display: inline-block;
+	padding: 0.4rem 1rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	border: 1px solid var(--tcd-border);
+	border-radius: 9999px;
+	background: #fff;
+	color: var(--tcd-body);
+	cursor: pointer;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tcd-glossary__filter-pill:hover,
+.tcd-glossary__filter-pill:focus {
+	border-color: var(--tcd-orange);
+	color: var(--tcd-orange);
+	outline: none;
+}
+
+.tcd-glossary__filter-pill.is-active {
+	background: var(--tcd-orange);
+	border-color: var(--tcd-orange);
+	color: #fff;
+}
+
+.tcd-glossary__filter-dropdown {
+	padding: 0.5rem 1rem;
+	font-size: 0.9rem;
+	border: 1px solid var(--tcd-border);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--tcd-body);
+}
+
+/* Loading state */
+.tcd-glossary.is-loading .tcd-glossary__sections,
+.tcd-glossary.is-loading .tcd-glossary__empty {
+	opacity: 0.4;
+	pointer-events: none;
+	transition: opacity 0.15s ease;
+}
