@@ -3,7 +3,7 @@ Contributors: tcd
 Tags: glossary, elementor, cpt, taxonomy, a-z
 Requires at least: 5.8
 Tested up to: 6.5
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 
 A-Z glossary with Elementor widget support, taxonomy filtering, and GitHub auto-updates.
