@@ -248,12 +248,21 @@ class TCD_Glossary_Widget extends \Elementor\Widget_Base {
 			),
 		) );
 
-		$this->add_control( 'nav_hover_color', array(
-			'label'     => __( 'Hover Color', 'tcd-glossary' ),
+		$this->add_control( 'nav_hover_bg_color', array(
+			'label'     => __( 'Hover Background', 'tcd-glossary' ),
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => array(
-				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:hover' => 'background-color: {{VALUE}}; color: #fff;',
-				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:focus' => 'background-color: {{VALUE}}; color: #fff;',
+				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:hover' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:focus' => 'background-color: {{VALUE}};',
+			),
+		) );
+
+		$this->add_control( 'nav_hover_text_color', array(
+			'label'     => __( 'Hover Text Color', 'tcd-glossary' ),
+			'type'      => \Elementor\Controls_Manager::COLOR,
+			'selectors' => array(
+				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:hover' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .tcd-glossary__nav-link.is-active:focus' => 'color: {{VALUE}};',
 			),
 		) );
 
