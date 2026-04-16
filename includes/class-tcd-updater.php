@@ -17,7 +17,7 @@ class TCD_Updater {
 	private $github_repo;
 	private $current_version;
 	private $transient_key = 'tcd_glossary_update_check';
-	private $cache_hours   = 12;
+	private $cache_hours   = 1;
 
 	/**
 	 * @param string $plugin_basename Plugin basename (e.g. 'tcd-glossary/tcd-glossary.php').
@@ -53,7 +53,14 @@ class TCD_Updater {
 	private function get_release_data() {
 		$cached = get_transient( $this->transient_key );
 		if ( false !== $cached ) {
-			return $cached;
+			// Invalidate cache if the cached version matches the current installed version,
+			// meaning an update was applied and we need to re-check for the next one.
+			$cached_version = isset( $cached->tag_name ) ? $this->normalize_version( $cached->tag_name ) : '';
+			if ( $cached_version && version_compare( $cached_version, $this->current_version, '<=' ) ) {
+				delete_transient( $this->transient_key );
+			} else {
+				return $cached;
+			}
 		}
 
 		$url      = 'https://api.github.com/repos/' . $this->github_repo . '/releases/latest';
